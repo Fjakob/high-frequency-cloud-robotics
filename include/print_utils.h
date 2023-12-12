@@ -14,6 +14,7 @@
 
 #include <array>
 #include <iostream>
+#include <atomic>
 
 // json import
 #include <fstream>
@@ -22,7 +23,6 @@ using json = nlohmann::json;
 
 #include "data_types.h"
 
-// operator for array printing
 namespace {
     template <class T, size_t N>
     std::ostream &operator<<(std::ostream &ostream, const std::array<T, N> &array) {

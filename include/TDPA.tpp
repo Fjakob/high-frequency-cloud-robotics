@@ -1,4 +1,12 @@
+/*************************************************
+ * Implementation file of TDPA template header
+ * 
+ * Author: Fabian Jakob
+ * 
+**************************************************/
+
 #pragma once
+
 
 template <int DOF>
 TDPA<DOF>::TDPA() {

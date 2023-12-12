@@ -21,4 +21,4 @@ _deps
 build/*
 *.asv
 
-data/local_*
+data/cloud_*

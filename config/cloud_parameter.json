@@ -1,0 +1,18 @@
+{
+  "remote_ip": "10.157.174.115",
+  "local_port": 5001,
+  "remote_port": 5001,
+  "run_time": 12,
+  "TDPA_active": true,
+  "k_pos_drift": 5.0,
+  "eta_passivity_shortage": 0.0,
+  "translational_stiffness": 400,
+  "rotational_stiffness": 1,
+  "force_control": true,
+  "k_p": 0.15, 
+  "k_i": 0.001,
+  "print_rate": 0.1,
+  "sample_time_init": 0.001,
+  "n_data_record": 100
+}
+
