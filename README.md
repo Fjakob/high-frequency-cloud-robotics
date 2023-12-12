@@ -17,8 +17,8 @@ The purpose of this repo is to provide an exemplary implementation of a framwork
 
 This repo is divided into two branches:
 
-1. [the robot side](/Fjakob/high-frequency-cloud-robotics/tree/controller-local)
-2. [the cloud side](/Fjakob/high-frequency-cloud-robotics/tree/controller-cloud)
+1. [the robot side](../../Fjakob/high-frequency-cloud-robotics/tree/controller-local)
+2. [the cloud side](../../Fjakob/high-frequency-cloud-robotics/tree/controller-cloud)
 
 Make sure to clone the respective branch on one PC connected to the robot and one PC running the cloud. Both PC has to be located in the same network. For communication, a [UDP socket](./include/udp_utils.cpp) is implemented. This branch runs the **cloud** side, and implements the controller therefore. Make sure, to adjust the control gains wisely to not risk instability or discontinuities. Note, that stability might also depend on the initial configuration of the robot.
 
