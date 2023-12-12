@@ -1,7 +1,7 @@
-# High-Frequency Cloud Robotics (Local Side)
+# High-Frequency Cloud Robotics
 
 <p align="center">
-  <img src="https://github.com/Fjakob/high-frequency-cloud-robotics/assets/78848571/2caf04bf-264b-463f-a264-935bf04f7213" width="200"/>
+  <img src="https://github.com/Fjakob/high-frequency-cloud-robotics/assets/78848571/2caf04bf-264b-463f-a264-935bf04f7213" width="600"/>
 </p>
 
 ## Background
