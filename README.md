@@ -20,7 +20,7 @@ This repo is divided into two branches:
 1. [the robot side](https://github.com/Fjakob/high-frequency-cloud-robotics)
 2. [the cloud side](https://github.com/Fjakob/high-frequency-cloud-robotics/tree/controller-cloud)
 
-Make sure to clone the respective branch on one PC connected to the robot and one PC running the cloud. Both PC has to be located in the same network. For communication, a [UDP socket](./include/udp_utils.cpp) is implemented. This branch runs the **cloud** side, and implements the controller therefore. Make sure, to adjust the control gains wisely to not risk instability or discontinuities. Note, that stability might also depend on the initial configuration of the robot.
+Make sure to clone the respective branch on one PC connected to the robot and one PC running the cloud. Both PC has to be located in the same network. For communication, a [UDP socket](./include/udp_utils.cpp) is implemented. This branch runs the **cloud** side, and implements the controller therefore. Make sure, to adjust the control gains wisely to not risk instability or discontinuities. Note, that stability might also depend on the initial configuration of the robot. Note, that the model parameters used for the dynamic model are individually identified and might now apply to your specific Franka Robot.
 
 
 ## Run the Code
@@ -50,7 +50,7 @@ Edit the configuration file [cloud_parameter.json](./config/cloud_parameter.json
 1. the IP of the robot PC
 2. The run time
 3. whether you want to use TDPA
-4. if you use TDPA, the passivity augmentation constant `eta`
+4. if you use TDPA, the position drift compensation gain and the passivity augmentation constant `eta`
 5. the control gains of the impedance controller
 6. whether you want to use force control and the force control PI gains
 
