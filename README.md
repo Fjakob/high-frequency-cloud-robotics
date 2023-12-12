@@ -1,6 +1,8 @@
 # controller-at-local
 
-![concept](https://github.com/Fjakob/high-frequency-cloud-robotics/assets/78848571/2caf04bf-264b-463f-a264-935bf04f7213)
+<p align="center">
+  <img src="[http://some_place.com/image.png](https://github.com/Fjakob/high-frequency-cloud-robotics/assets/78848571/2caf04bf-264b-463f-a264-935bf04f7213)" width="200"/>
+</p>
 
 ## Background
 
