@@ -9,7 +9,6 @@ set(CMAKE_BUILD_TYPE Release)
 find_package(Franka REQUIRED HINTS ~/libfranka/build)
 find_package(Eigen3 REQUIRED)
 find_package(Threads REQUIRED)
-# find_package(gram_savitzky_golay REQUIRED)
 
 # pull JSON C++ library
 include(FetchContent)
@@ -37,6 +36,3 @@ foreach(code ${CODESET})
     nlohmann_json::nlohmann_json
   )
 endforeach()
-
-# target_link_libraries(motion_with_control Poco::Foundation)
-# target_link_libraries(TelePanda gram_savitzky_golay::gram_savitzky_golay)
