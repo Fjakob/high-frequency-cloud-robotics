@@ -1,10 +1,3 @@
-/*************************************************
- * Implementation file of TDPA template header
- * 
- * Author: Fabian Jakob
- * 
-**************************************************/
-
 #pragma once
 
 
