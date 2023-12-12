@@ -17,8 +17,8 @@ The purpose of this repo is to provide an exemplary implementation of a framwork
 
 This repo is divided into two branches:
 
-1. the robot side
-2. the cloud side
+1. [the robot side](https://github.com/Fjakob/high-frequency-cloud-robotics)
+2. [the cloud side](https://github.com/Fjakob/high-frequency-cloud-robotics/tree/controller-cloud)
 
 Make sure to clone the respective branch on one PC connected to the robot and one PC running the cloud. Both PC has to be located in the same network. For communication, a [UDP socket](./include/udp_utils.cpp) is implemented. This branch runs the **robot** side, and is only compatible with [Franka Robotics](https://franka.de/) robots that have the Franka Control Interface (FCI) feature installed.
 
