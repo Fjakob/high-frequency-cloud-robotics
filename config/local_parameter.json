@@ -1,0 +1,14 @@
+{
+  "robot_ip": "172.16.0.11",
+  "remote_ip": "10.157.175.215",
+  "local_port": 5001,
+  "remote_port": 5001,
+  "run_time": 12,
+  "q_init": [0.0865757,-0.18316,0.0333364,-1.7813,-0.13251,1.69868,-0.777161],
+  "TDPA_active": true,
+  "eta_passivity_shortage": 0.0,
+  "print_rate": 0.5,
+  "sample_time_init": 0.001,
+  "n_data_record": 75
+}
+
