@@ -1,3 +1,17 @@
+/*************************************************************
+ * Controller-in-Cloud: UDP socket
+ * 
+ * Description:
+ * threads to send/receive UDP messages for cloud communication
+ * 
+ * Author: 
+ * Xiao Chen, Fabian Jakob
+ * Munich Institure of Robotics and System Intelligence
+ * Technical University of Munich
+ * xiaoyu.chen@tum.de
+ * 
+****************************************************************/
+
 #pragma once
 
 #include <arpa/inet.h>

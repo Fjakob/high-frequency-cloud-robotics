@@ -1,3 +1,11 @@
+/********************************************************
+ * Controller-in-Cloud: Data types
+ * 
+ * Description:
+ * Data types for print and UDP threads
+ * 
+*********************************************************/
+
 #pragma once
 
 #include <mutex>

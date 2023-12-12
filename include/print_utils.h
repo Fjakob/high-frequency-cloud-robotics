@@ -1,3 +1,17 @@
+/********************************************************
+ * Controller-in-Cloud: Prompter
+ * 
+ * Description:
+ * Thread to print data in promt in execution
+ * 
+ * Author: 
+ * Fabian Jakob
+ * Munich Institure of Robotics and System Intelligence
+ * Technical University of Munich
+ * fabian.jakob@tum.de
+ * 
+*********************************************************/
+
 #include <array>
 #include <iostream>
 

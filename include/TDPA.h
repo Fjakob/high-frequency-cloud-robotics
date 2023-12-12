@@ -1,3 +1,17 @@
+/********************************************************
+ * Controller-in-Cloud: Time Domain Passivity Approach
+ * 
+ * Description:
+ * TDPA library that performs communication passivation
+ * 
+ * Author: 
+ * Fabian Jakob
+ * Munich Institure of Robotics and System Intelligence
+ * Technical University of Munich
+ * fabian.jakob@tum.de
+ * 
+*********************************************************/
+
 #pragma once
 
 #include <stdlib.h>

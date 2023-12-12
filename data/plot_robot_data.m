@@ -1,7 +1,7 @@
 addpath('../build');
 addpath('../data');
 
-run('DATA.m');
+run('robot_data.m');
 
 idx = DATAm(:,1);
 time_local = DATAm(1:12000,2);

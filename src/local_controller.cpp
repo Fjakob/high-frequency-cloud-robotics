@@ -1,3 +1,19 @@
+/*******************************************************
+ * Controller-in-Cloud: Local Side
+ * 
+ * Description:
+ * source code to connect to Franka Robotics robot and
+ * apply control commands received by an edge-cloud in
+ * real-time.
+ * 
+ * Author: 
+ * Fabian Jakob
+ * Munich Institure of Robotics and System Intelligence
+ * Technical University of Munich
+ * fabian.jakob@tum.de
+ * 
+********************************************************/
+
 #include <array>
 #include <atomic>
 #include <cmath>
@@ -57,16 +73,16 @@ int main(int argc, char **argv) {
     // Start threads;
     std::thread thread_send;
     std::thread thread_recv;
-    //std::thread thread_print;
+    std::thread thread_print;
     std::thread thread_robot;
 
     thread_send  = std::thread(udp_send, std::ref(parameter), std::ref(running), std::ref(data_send));
     thread_recv  = std::thread(udp_recv, std::ref(parameter), std::ref(running), std::ref(data_recv));
-    //thread_print = std::thread(print_data, std::ref(parameter), std::ref(running), std::ref(data_print), std::ref(time_local));
+    thread_print = std::thread(print_data, std::ref(parameter), std::ref(running), std::ref(data_print), std::ref(time_local));
     thread_robot = std::thread(drive_robot, std::ref(parameter), std::ref(running), std::ref(data_send), std::ref(data_recv), std::ref(data_print), std::ref(time_local));
 
     thread_robot.join();
-    //thread_print.join();
+    thread_print.join();
     thread_send.detach();
     thread_recv.detach();
 
@@ -125,9 +141,6 @@ void drive_robot(json &parameter, bool &running, Data2Send &data_send, Data2Recv
     double shortage = 0.0;
     double eta = parameter["eta_passivity_shortage"];
 
-    /* Specify force control */
-    bool force_control_active = parameter["force_control"];
-
 
     try {
         /* Connect to robot */
@@ -150,21 +163,17 @@ void drive_robot(json &parameter, bool &running, Data2Send &data_send, Data2Recv
         robot.control(motion_generator);
         std::cout << "Finished moving to initial joint configuration.\n" << std::endl;
 
-        // Load the kinematics and dynamics model.
+        /* Load the kinematics and dynamics model. */ 
         franka::Model model = robot.loadModel();
 
         initial_state = robot.readOnce();
         Eigen::VectorXd initial_tau_ext(7), tau_error_integral(7);
 
-        // Read torque sensor offset
+        /* Read torque sensor offset */
         std::array<double, 7> gravity_array = model.gravity(initial_state);
         Eigen::Map<Eigen::Matrix<double, 7, 1>> initial_tau_measured(initial_state.tau_J.data());
         Eigen::Map<Eigen::Matrix<double, 7, 1>> initial_gravity(gravity_array.data());
         initial_tau_ext = initial_tau_measured - initial_gravity;
-
-        // std::cout << "initial_tau_ext=" << initial_tau_ext.transpose() << std::endl;
-        // std::cout << "q=" << initial_state.q << std::endl;
-        // std::cout << "tau_ext_hat_filtered=" << initial_state.tau_ext_hat_filtered << std::endl;
 
 
         /* CONTROL CALLBACK FUNCTION */
@@ -175,15 +184,15 @@ void drive_robot(json &parameter, bool &running, Data2Send &data_send, Data2Recv
             } 
             time_local += period.toSec();
 
-            // Measure TCP
+            /* Measure TCP */
             Eigen::Affine3d transform(Eigen::Matrix4d::Map(state.O_T_EE.data()));
             Eigen::Vector3d position(transform.translation());
 
-            // Measure external torques/forces
+            /* Measure external torques/forces */
             tau_ext_robot = state.tau_ext_hat_filtered;
             f_ext_robot = state.O_F_ext_hat_K;
 
-            // Measure joint angles/velocities
+            /* Measure joint angles/velocities */
             q_robot = state.q;
             dq_robot = state.dq;
 
@@ -203,12 +212,14 @@ void drive_robot(json &parameter, bool &running, Data2Send &data_send, Data2Recv
 
             /* TDPA */
             if (TDPA_active) {
-                // Robot is passive w.r.t. (dq,tau) 
-                // => TDPA has to be passive w.r.t (-dq,tau)
+                /*
+                Robot is passive w.r.t. (dq,tau) 
+                => TDPA has to be passive w.r.t (-dq,tau)
+                */ 
                 for(int idx=0; idx<7; idx++) v_tdpa[idx] = -state.dq[idx];
                 f_tdpa = tau_com_cloud;
 
-                // shortage computation as integral of robot energy dissipation
+                /* shortage computation as integral of robot energy dissipation */
                 dissipation = 0;
                 for(int idx=0; idx<7; idx++) dissipation += mu_friction*state.dq[idx]*state.dq[idx];
                 shortage += period.toSec()*eta*dissipation;
@@ -226,7 +237,7 @@ void drive_robot(json &parameter, bool &running, Data2Send &data_send, Data2Recv
                 tau_d_calculated = tau_com_cloud;
             }
 
-            // Augment virtual friction
+            /* Augment virtual friction */
             for(int idx=0; idx<7; idx++) tau_d_calculated[idx] = 0.9*tau_d_calculated_old[idx] + 0.1*(tau_d_calculated[idx] - mu_friction*state.dq[idx]);
             for(int idx=0; idx<7; idx++) tau_d_calculated_old[idx] = tau_d_calculated[idx];
 

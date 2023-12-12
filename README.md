@@ -16,7 +16,7 @@ This repo is divided into two branches:
 1. the robot side
 2. the cloud side
 
-Make sure to clone the respective branch on one PC connected to the robot and one PC running the cloud. Both PC has to be located in the same network. For communication, a [UDP socket](./include/udp_utils.cpp) is implemented. This branch runs the **robot** side, and is only compatible with [Franka Robotics](https://franka.de/) robots. 
+Make sure to clone the respective branch on one PC connected to the robot and one PC running the cloud. Both PC has to be located in the same network. For communication, a [UDP socket](./include/udp_utils.cpp) is implemented. This branch runs the **robot** side, and is only compatible with [Franka Robotics](https://franka.de/) robots that have the Franka Control Interface (FCI) feature installed.
 
 
 ## Run the Code
@@ -62,7 +62,7 @@ If your configurations are set, start the cloud controller on the remote PC. If 
 ./build/local_controller
 ```
 
-The code will terminate after the run time, specified by the configuration file. 
+Make sure that the robot FCI is enabled and in execution mode. The code will terminate after the run time, specified by the configuration file. 
 
 Try running the setup using different configurations and try to impose artificial delay using [tcgui](https://github.com/tum-lkn/tcgui).
 

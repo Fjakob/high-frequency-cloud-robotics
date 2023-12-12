@@ -1,11 +1,16 @@
-/** ------------------------- Revision Code History -------------------
-*** Programming Language: C++
-*** Description: Data Recorder
-*** Released Date: Feb. 2021
-*** Hamid Sadeghian
-*** Munich Institute of Robotics and System Intelligence
-*** hamid.sadeghian@tum.de
------------------------------------------------------------------------ */
+/********************************************************
+ * Controller-in-Cloud: Recorder
+ * 
+ * Description:
+ * Recorder class to store data for plotting in execution
+ * 
+ * Author: 
+ * Hamid Sadeghian
+ * Munich Institure of Robotics and System Intelligence
+ * Technical University of Munich
+ * hamid.sadeghian@tum.de
+ * 
+*********************************************************/
 
 #pragma once
 
