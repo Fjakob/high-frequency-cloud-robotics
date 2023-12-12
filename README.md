@@ -1,5 +1,7 @@
 # controller-at-local
 
+![concept](https://github.com/Fjakob/high-frequency-cloud-robotics/assets/78848571/2caf04bf-264b-463f-a264-935bf04f7213)
+
 ## Background
 
 This repo implements the paper (currently in submission)
