@@ -10,7 +10,7 @@ Robot Cloud Control.
 The purpose of this repo is to provide an exemplary implementation of a framwork to outsource high-frequency robot computations to the edge-cloud. Stabilization w.r.t. to communication delay and package loss is handled by the [Time Domain Passivity Approach (TDPA)](./include/TDPA.tpp). To handle the performance tradeoff, a position drift compensation and passivity-excess augmentation is implemented. For further details, refer to the paper.
 
 <p align="center">
-  <img src="https://github.com/Fjakob/high-frequency-cloud-robotics/assets/78848571/2caf04bf-264b-463f-a264-935bf04f7213" width="600"/>
+  <img src="https://github.com/Fjakob/high-frequency-cloud-robotics/assets/78848571/2caf04bf-264b-463f-a264-935bf04f7213" width="400"/>
 </p>
 
 ## Description
@@ -76,6 +76,6 @@ Try running the setup using different configurations and try to impose artificia
 After terminating the code, relevant variables will be saves in a Matlab file and saved in the directory [data](./data/). For visualization, a [Matlab script](./data/plot_robot_data.m) that parses and plots the data is provided.
 
 <p align="center">
-  <img src="https://github.com/Fjakob/high-frequency-cloud-robotics/assets/78848571/f267f0ad-88be-4161-9f03-eba0fb5788f7" width="500"/>
+  <img src="https://github.com/Fjakob/high-frequency-cloud-robotics/assets/78848571/f267f0ad-88be-4161-9f03-eba0fb5788f7" width="400"/>
 </p>
 
