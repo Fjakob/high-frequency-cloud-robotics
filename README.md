@@ -20,7 +20,7 @@ This repo is divided into two branches:
 1. [the robot side](https://github.com/Fjakob/high-frequency-cloud-robotics)
 2. [the cloud side](https://github.com/Fjakob/high-frequency-cloud-robotics/tree/controller-cloud)
 
-Make sure to clone the respective branch on one PC connected to the robot and one PC running the cloud. Both PC has to be located in the same network. For communication, a [UDP socket](./include/udp_utils.cpp) is implemented. This branch runs the **cloud** side, and implements the controller therefore. Make sure, to adjust the control gains wisely to not risk instability or discontinuities. Note, that stability might also depend on the initial configuration of the robot. Note, that the model parameters used for the dynamic model are individually identified and might now apply to your specific Franka Robot.
+Make sure to clone the respective branch on one PC connected to the robot and one PC running the cloud. Both PC has to be located in the same network. For communication, a [UDP socket](./include/udp_utils.cpp) is implemented. This branch runs the **cloud** side, and implements the controller therefore. Make sure, to adjust the control gains wisely to not risk instability or discontinuities. Note, that stability might also depend on the initial configuration of the robot. Note also, that the model parameters used for the dynamic model are individually identified and might now apply to your specific Franka Robot. Another commonly used dynamic model has been provided by [FrankaEmikaPandaDynModel](https://github.com/marcocognetti/FrankaEmikaPandaDynModel).
 
 
 ## Run the Code
