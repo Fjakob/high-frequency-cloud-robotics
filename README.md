@@ -7,7 +7,7 @@
 
 ## Background
 
-This repo implements the paper ([see on IEEE](https://ieeexplore.ieee.org/abstract/document/10610616))
+This repo implements the paper
 
 > F. Jakob, X. Chen, H. Sadeghian and S. Haddadin, "Enhancing the Tracking Performance of Passivity-based High-Frequency Robot Cloud Control," 2024 IEEE International Conference on Robotics and Automation (ICRA).
 
