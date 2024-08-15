@@ -1,6 +1,6 @@
 <!-- PROJECT SHIELDS -->
-[![IEEE][ieee-shield]][ieee-url]
 [![GIT][git-shield]][git-url]
+[![IEEE][ieee-shield]][ieee-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 # High-Frequency Cloud Robotics
