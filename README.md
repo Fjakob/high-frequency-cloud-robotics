@@ -2,10 +2,9 @@
 
 ## Background
 
-This repo implements the paper (currently in submission)
+This repo implements the paper 
 
-> Fabian Jakob, Xiao Chen, Hamid Sadeghian, Sami Haddadin. 2024. Enhancing the Tracking Performance of Passivity-based High-Frequency
-Robot Cloud Control.
+> F. Jakob, X. Chen, H. Sadeghian and S. Haddadin, "Enhancing the Tracking Performance of Passivity-based High-Frequency Robot Cloud Control," 2024 IEEE International Conference on Robotics and Automation (ICRA), Yokohama, Japan, 2024, doi: 10.1109/ICRA57147.2024.10610616.
 
 The purpose of this repo is to provide an exemplary implementation of a framwork to outsource high-frequency robot computations to the edge-cloud. Stabilization w.r.t. to communication delay and package loss is handled by the [Time Domain Passivity Approach (TDPA)](./include/TDPA.tpp). To handle the performance tradeoff, a position drift compensation and passivity-excess augmentation is implemented. For further details, refer to the paper.
 
