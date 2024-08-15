@@ -1,3 +1,8 @@
+<!-- PROJECT SHIELDS -->
+[![GIT][git-shield]][git-url]
+[![IEEE][ieee-shield]][ieee-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
 # High-Frequency Cloud Robotics
 
 ## Background
@@ -77,4 +82,13 @@ After terminating the code, relevant variables will be saves in a Matlab file an
 <p align="center">
   <img src="https://github.com/Fjakob/high-frequency-cloud-robotics/assets/78848571/f267f0ad-88be-4161-9f03-eba0fb5788f7" width="500"/>
 </p>
+
+[git-shield]: https://img.shields.io/badge/GIT-black?style=for-the-badge&logo=GITHUB
+[git-url]: https://github.com/Fjakob/high-frequency-cloud-robotics
+[ieee-shield]: https://img.shields.io/badge/IEEE-blue?style=for-the-badge&logo=IEEE
+[ieee-url]: https://ieeexplore.ieee.org/abstract/document/10610616
+[linkedin-shield]: https://img.shields.io/badge/LINKEDIN-blue?style=for-the-badge&logo=LinkedIn
+[linkedin-url]: https://www.linkedin.com/in/fabian-jakob/
+
+
 
