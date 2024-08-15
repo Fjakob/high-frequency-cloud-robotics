@@ -4,12 +4,9 @@
  * Description:
  * Dynamic model identified from Franka robot to provide
  * mass, gravity and coriolis matrices
- * 
- * Author: 
- * Mario Tröbinger
- * Munich Institure of Robotics and System Intelligence
- * Technical University of Munich
- * mario.troebinger@tum.de
+ *
+ * Important note: 
+ * parameters might not apply to your Franka!
  * 
 *********************************************************/
 
